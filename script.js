@@ -5,12 +5,14 @@ class Calculator {
         this.clear();
     }
 
+    //clears all data when executed
     clear() {
         this.currentOperand = '';
         this.previousOperand = '';
         this.operation = undefined;
     }
 
+    //initalisation of 'DEL' button
     delete() {
         this.currentOperand = this.currentOperand.toString().slice(0, -1);
     }
@@ -20,6 +22,7 @@ class Calculator {
         this.currentOperand = this.currentOperand.toString() + number.toString();
     }
 
+    //read operaion from input
     chooseOperation(operation) {
         if (this.currentOperand === '') return;
         if (this.previousOperand !== '') {
@@ -30,6 +33,7 @@ class Calculator {
         this.currentOperand = '';
     }
 
+    //compute entered data
     compute() {
         let computation;
         const prev = parseFloat(this.previousOperand);
